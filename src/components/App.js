@@ -19,21 +19,21 @@ import Banner from './Banner'
 import '../styles/App.css'
 
 function App(){
-  const [hits, setData] = useState([]);            // empty array
-  const [search, setSearch] = useState('');       // for input
+  const [hits, setData] = useState([]);                           // empty array
+  const [search, setSearch] = useState('');                       // for input
 
   useEffect(() => { 
 
-    const fetchData = async () => {                 // get data
+    const fetchData = async () => {                               // get data
         const res = await fetch (
           `https://pixabay.com/api/?key=31184286-fbddf0309f7be00a181927e82&q=${search}&image_type=photo`
           );
         const data = await res.json(); 
-        setData (data.hits);                              // met le resultat dans les données
+        setData (data.hits);                                      // data in array
   };
-      fetchData();                                        // search data
+      fetchData();                                                // search data
 
-} , [search])                                             // resout le probleme de boucle infini [] // erreur React Hook useEffect has a missing dependency: 'search'. Either include it or remove the dependency array --> [search]
+} , [search])                                                     // resout le probleme de boucle infini [] // erreur React Hook useEffect has a missing dependency: 'search'. Either include it or remove the dependency array --> [search]
 
 return(
 

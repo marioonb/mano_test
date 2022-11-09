@@ -27,10 +27,5 @@ function Banner() {
         </div>)
 }
 
-/*function Search() {
-    return ( <h1>Test Mano</h1>)
-    )
-}*/
-
 export default Banner
 
